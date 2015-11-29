@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="" method="post">
+        {% if todo is defined %}
+            <h2>编辑待办事项</h2>
+        {% else %}
+            <h2>添加新待办事项</h2>
+        {% endif %}
+ <div class="control-group">
+            <div class="control-group">
+                <div class="controls">
+                    <select name="category"  class="selectpicker" required>
+                        {% for category in categories %}
+                            {% if todo is defined %}
+                            <option value="{{ category.id }}" {% if todo.category_id == category.id %} selected {% endif %}>{{ category.name }}</option>
+                            {% else %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    <select name="priority"  class="selectpicker" required>
+                        {% for priority in priorities %}
+                            {% if todo is defined %}
+                                <option value="{{ priority.id }}" {% if todo.priority_id == priority.id %} selected {% endif %}>{{ priority.name }}</option>
+                                {% else %}
+                                    <option value="{{ priority.id }}">{{ priority.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    {% if todo is defined %}
+                    <input type="text" id="description" name="description" maxlength="60" class="input-xlarge" placeholder="你想怎样" value="{{ todo.description }}" required>
+                    {% else %}
+                    <input type="text" id="description" name="description" maxlength="60" class="input-xlarge" placeholder="你想怎样" required>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    <button class="btn btn-success" type="submit">
+                        {% if todo %}
+                            保存
+                        {% else %}
+                            添加待办
+                        {% endif %}
+                    </button>
+                </div>
+            </div>
+    </form>
+{% endblock %}
