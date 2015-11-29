@@ -16,4 +16,4 @@ python todoapp.py
 
 # 应用效果截图
 
-![appng](flask_todoapp/static/app.jpg)
+![appng](http://imgur.com/XWN9Vvk)
