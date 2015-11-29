@@ -16,4 +16,4 @@ python todoapp.py
 
 # 应用效果截图
 
-![appng](http://imgur.com/XWN9Vvk)
+![appng](http://i.imgur.com/XWN9Vvk.jpg?1)
