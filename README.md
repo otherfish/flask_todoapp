@@ -12,3 +12,8 @@ Developed using Flask, SQLAlchemy and Bootstrap
 如何运行此应用:
 
 python todoapp.py
+
+
+# 应用效果截图
+
+![appng]()
